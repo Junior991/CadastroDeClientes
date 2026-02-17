@@ -1,5 +1,6 @@
-package dev.junior.santos.CadastroDeClientes;
+package dev.junior.santos.CadastroDeClientes.clientes;
 
+import dev.junior.santos.CadastroDeClientes.missoes.MissoesModel;
 import jakarta.persistence.*;
 
 //@Entity transforma uma classe em uma entidade do banco de dados..
@@ -21,6 +22,11 @@ public class ClienteModel {
     private String nome;
     private int idade;
     private String email;
+
+    // Um cliente tem uma inica missão
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // chave estrangeira
+    private MissoesModel missoes;
 
     public ClienteModel() {
     }
