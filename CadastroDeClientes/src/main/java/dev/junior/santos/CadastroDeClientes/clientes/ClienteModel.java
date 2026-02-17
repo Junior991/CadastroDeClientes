@@ -2,10 +2,18 @@ package dev.junior.santos.CadastroDeClientes.clientes;
 
 import dev.junior.santos.CadastroDeClientes.missoes.MissoesModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 //@Entity transforma uma classe em uma entidade do banco de dados..
 @Entity
 @Table(name ="tb_cadastro")
+@NoArgsConstructor //Constroi o construtor sem elementos
+@AllArgsConstructor // Constroi o construtor com todos os elementos
+
+// Args constructor, anotação para diminuir consideravelmente o tamanho do codigo.
+@Data // Cria todos os getter e os setters, diminui consideravelmente o codigo.
 public class ClienteModel {
     public Long getId1() {
         return id1;
@@ -28,37 +36,6 @@ public class ClienteModel {
     @JoinColumn(name = "missoes_id") // chave estrangeira
     private MissoesModel missoes;
 
-    public ClienteModel() {
-    }
 
-    public ClienteModel(int idade, String email, String nome) {
-        this.idade = idade;
-        this.email = email;
-        this.nome = nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
 
