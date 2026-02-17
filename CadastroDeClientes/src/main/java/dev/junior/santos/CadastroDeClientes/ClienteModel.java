@@ -2,7 +2,7 @@ package dev.junior.santos.CadastroDeClientes;
 
 import jakarta.persistence.*;
 
-//@Entity transforma uma classe em uma entidade do banco de dados.
+//@Entity transforma uma classe em uma entidade do banco de dados..
 @Entity
 @Table(name ="tb_cadastro")
 public class ClienteModel {
@@ -16,11 +16,11 @@ public class ClienteModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id1;
-    Long id;
-    String nome;
-    int idade;
-    String email;
+    private Long id1;
+    private Long id;
+    private String nome;
+    private int idade;
+    private String email;
 
     public ClienteModel() {
     }
